@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Index Page</h1>
+    <p>Welcome to my store</p>
+    <h5>Name: {{ name }}</h5>
+    <p>Age: {{ age }}</p>
+
+    {% if age > 18 %}
+    <p>Eligible</p>
+    {% else %}
+    <p>Not Eligible</p>
+    {% endif %}
+
+    <ul>
+        {% for mark in marks %}
+        <li>{{ mark }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
