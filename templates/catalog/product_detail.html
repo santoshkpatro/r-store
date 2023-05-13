@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <h1>Product Image</h1>
+        </div>
+        <div class="col-6">
+            <h5>
+                {{ product.title }}
+            </h5>
+            <p>{{ product.description }}</p>
+            <form action="{% url 'cart-add' product_id=product.id %}" method="get">
+                <label for="quantity" class="form-label">Select Quantity</label>
+                <div class="row">
+                    <div class="col-2">
+                        <input type="number" class="form-control" id="quantity" value="1" name="quantity">
+                    </div>
+                    <div class="col-10">
+                        <button type="submit" class="btn btn-primary">Add To Cart</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock body %}
