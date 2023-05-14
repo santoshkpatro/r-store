@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container">
+  <h1>Cart Items</h1>
+  <div class="row">
+    <div class="col-9">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Product</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in items %}
+          <tr>
+            <th scope="row">{{ forloop.counter }}</th>
+            <td>{{ item.product.title }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.product.price }}</td>
+            <td>{{ item.amount }}</td>
+            <td><a href="{% url 'cart_delete' item_id=item.id %}" class="btn btn-danger btn-sm">Delete</a></td>
+          </tr>
+          {% endfor %}
+          <tr>
+            <th scope="row"></th>
+            <td></td>
+            <td></td>
+            <td><h5>Total</h5></td>
+            <td>{{ total }}</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-3">
+      <a href="" class="btn btn-success btn-sm">Checkout</a>
+    </div>
+  </div>
+</div>
+{% endblock body %}

@@ -11,7 +11,7 @@
                 {{ product.title }}
             </h5>
             <p>{{ product.description }}</p>
-            <form action="{% url 'cart-add' product_id=product.id %}" method="get">
+            <form action="{% url 'cart_add' product_id=product.id %}" method="get">
                 <label for="quantity" class="form-label">Select Quantity</label>
                 <div class="row">
                     <div class="col-2">
